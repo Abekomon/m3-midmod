@@ -1,0 +1,22 @@
+.reservation-card {
+  background: white;
+  color: teal;
+  border: 5px solid teal;
+  border-radius: 10px;
+}
+
+.reservation-card button {
+  width: 80%;
+  border: none;
+  background: teal;
+  color: white;
+  height: 15%;
+  margin: 2% 0 10%;
+  border: 3px solid teal;
+}
+
+.reservation-card button:hover {
+  background: white;
+  color: teal;
+  cursor: pointer;
+}
