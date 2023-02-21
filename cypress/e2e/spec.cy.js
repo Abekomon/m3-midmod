@@ -22,5 +22,21 @@ describe('Dashboard Spec', () => {
     cy.get('input[name="time"]').type('7:45').should('have.value', '7:45')
     cy.get('input[name="guests"]').type(2).should('have.value', 2)
   })
+  
+  it('Should allow a user to add a new reservation', () => {
+    cy.get('input[name="name"]').type('Max')
+    .get('input[name="date"]').type('02/21')
+    .get('input[name="time"]').type('7:45')
+    .get('input[name="guests"]').type(2)
+    .get('.res-form button').click()
+    .get('.resy-container').children().should('have.length', 4)
+  })
 
+  it('Should not submit a new reservation if all inputs are not filled out', () => {
+    cy.get('input[name="name"]').type('Max')
+    .get('input[name="date"]').type('02/21')
+    .get('input[name="time"]').type('7:45')
+    .get('.res-form button').click()
+    .get('.resy-container').children().should('have.length', 3)
+  })
 })
