@@ -23,6 +23,11 @@ class App extends Component {
     reservation["id"] = this.state.resData.length + 1
     this.setState({ resData: [...this.state.resData, reservation] })
   }
+
+  remRes = (id) => {
+    const newState = this.state.resData.filter(res => res.id !== id)
+    this.setState({ resData: newState  })
+  }
   
   render() {
     return (
@@ -43,6 +48,7 @@ class App extends Component {
                 name={res.name}
                 time={res.time}
                 guests={res.number}
+                remRes={this.remRes}
               />
             )}
           </div> 
