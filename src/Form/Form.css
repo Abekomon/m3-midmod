@@ -1,0 +1,26 @@
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  height: 1.6em;
+}
+
+form input {
+  height: 100%;
+  width: 18%;
+  border: 1px solid grey;
+}
+
+form button {
+  border: 1px solid grey;
+  background: teal;
+  color: white;
+  height: 30px;
+  width: 18%;
+}
+
+form button:hover {
+  cursor: pointer;
+  background: white;
+  color: teal;
+}

@@ -18,12 +18,14 @@ class Form extends Component {
 
   submitRes = (e) => {
     e.preventDefault()
-    const newRes = {
-      id: Date.now(),
-      ...this.state
+    if(this.state.name && this.state.date && this.state.time && this.state.guests) {
+      const newRes = {
+        id: Date.now(),
+        ...this.state
+      }
+      this.props.addRes(newRes)
+      this.clearInputs()
     }
-    this.props.addRes(newRes)
-    this.clearInputs()
   }
 
   clearInputs = () => {
