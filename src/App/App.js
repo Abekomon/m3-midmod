@@ -19,7 +19,7 @@ class App extends Component {
     })
   }
 
-  submitRes = (reservation) => {
+  addRes = (reservation) => {
     reservation["id"] = this.state.resData.length + 1
     this.setState({ resData: [...this.state.resData, reservation] })
   }
@@ -29,7 +29,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form submitRes={this.submitRes} />
+          <Form addRes={this.addRes} />
         </div>
         {
           this.state.isLoading ? <h2 className='loading-text'>Loading...</h2> :
