@@ -17,7 +17,10 @@ describe('Dashboard Spec', () => {
   })
 
   it('Should update form data when the user inputs information', () => {
-    cy.get()
+    cy.get('input[name="name"]').type('Max').should('have.value', 'Max')
+    cy.get('input[name="date"]').type('02/21').should('have.value', '02/21')
+    cy.get('input[name="time"]').type('7:45').should('have.value', '7:45')
+    cy.get('input[name="guests"]').type(2).should('have.value', 2)
   })
 
 })
